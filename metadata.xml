@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Dark Esau Helper</name>
+    <directory>dark esau helper</directory>
+    <id>2496789708</id>
+    <description>Mod created to help when playing as a Tainted Jacob. Whenever the Dark Esau doing his charge attack, a target showing his end position will be shown (similar to the &quot;Marked&quot;)
+Should work with both his regular attack and Anima Sola </description>
+    <version>1.2</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Player Characters"/>
+    <tag id="Bosses"/>
+    <tag id="Tweaks"/>
+    <tag id="Graphics"/>
+</metadata>
