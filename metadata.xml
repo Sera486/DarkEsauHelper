@@ -3,9 +3,11 @@
     <name>Dark Esau Helper</name>
     <directory>dark esau helper</directory>
     <id>2496789708</id>
-    <description>Mod created to help when playing as a Tainted Jacob. Whenever the Dark Esau doing his charge attack, a target showing his end position will be shown (similar to the &quot;Marked&quot;)
-Should work with both his regular attack and Anima Sola </description>
-    <version>1.2</version>
+    <description>Mod created to help when playing as a Tainted Jacob. Whenever the Dark Esau doing his charge attack, a target showing his end position will be shown (similar to the "Marked")
+Should work with both his regular attack and Anima Sola.
+
+Special thanks to [url=https://steamcommunity.com/profiles/76561198214567391]Sylmir[/url] for implementing a feature  with line following player position while Esau is chained</description>
+    <version>1.3</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Player Characters"/>
