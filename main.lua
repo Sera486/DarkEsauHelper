@@ -150,6 +150,37 @@ local animaColorDanger = Color(0.85, 0.1, 0)
 local animaColorCritical = Color(1, 0.1, 0.1)
 local lastColor = animaColorNormal
 
+local function flickerSprite(sprite, frame)                                     
+    if frame >= ESAU_ANIMA_FRAME_WARN and frame < ESAU_ANIMA_FRAME_DANGER then  
+        if frame % 4 == 0 then                                                  
+            if frame % 8 == 0 then                                              
+                sprite.Color = animaColorNormal                                 
+            else                                                                
+                sprite.Color = animaColorCritical                                   
+            end                                                                 
+        end                                                                     
+    elseif frame >= ESAU_ANIMA_FRAME_DANGER and frame < ESAU_ANIMA_FRAME_CRITICAL then
+        if frame % 3 == 0 then                                                  
+            if frame % 6 == 0 then                                              
+                sprite.Color = animaColorNormal                                   
+            else                                                                
+                sprite.Color = animaColorCritical                                 
+            end                                                                 
+        end                                                                     
+    elseif frame >= ESAU_ANIMA_FRAME_CRITICAL then                              
+        if frame % 2 == 0 then                                                  
+            if frame % 4 == 2 then                                              
+                sprite.Color = animaColorNormal                                 
+            else                                                                
+                sprite.Color = animaColorCritical                               
+            end                                                                 
+        end                                                                     
+    else                                                                        
+        sprite.Color = animaColorNormal                                         
+    end                                                                         
+                                                                                
+    lastColor = sprite.Color                                                    
+end
 
 function mod:drawLine(from, to, flicker, frame, breakFree)                      
     --using edited fetus_target file, failed to make line visible otherwise     
@@ -188,38 +219,6 @@ function mod:drawLine(from, to, flicker, frame, breakFree)
         targetSprite:Render(Isaac.WorldToScreen(to))                            
     end                                                                         
 end 
-
-local function flickerSprite(sprite, frame)                                     
-    if frame >= ESAU_ANIMA_FRAME_WARN and frame < ESAU_ANIMA_FRAME_DANGER then  
-        if frame % 4 == 0 then                                                  
-            if frame % 8 == 0 then                                              
-                sprite.Color = animaColorNormal                                 
-            else                                                                
-                sprite.Color = animaColorCritical                                   
-            end                                                                 
-        end                                                                     
-    elseif frame >= ESAU_ANIMA_FRAME_DANGER and frame < ESAU_ANIMA_FRAME_CRITICAL then
-        if frame % 3 == 0 then                                                  
-            if frame % 6 == 0 then                                              
-                sprite.Color = animaColorNormal                                   
-            else                                                                
-                sprite.Color = animaColorCritical                                 
-            end                                                                 
-        end                                                                     
-    elseif frame >= ESAU_ANIMA_FRAME_CRITICAL then                              
-        if frame % 2 == 0 then                                                  
-            if frame % 4 == 2 then                                              
-                sprite.Color = animaColorNormal                                 
-            else                                                                
-                sprite.Color = animaColorCritical                               
-            end                                                                 
-        end                                                                     
-    else                                                                        
-        sprite.Color = animaColorNormal                                         
-    end                                                                         
-                                                                                
-    lastColor = sprite.Color                                                    
-end
 
 function mod:drawHealthBar(npc)
     if not isHealthSpriteInitialized then                                             
